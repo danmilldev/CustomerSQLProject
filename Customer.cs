@@ -12,5 +12,15 @@ namespace CustomerSQLProject
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
     
+        public static void CreateCustomer(int id)
+        {
+
+        }
+
+        public static void DeleteCustomer(int id)
+        {
+
+        }
+
     }
 }
