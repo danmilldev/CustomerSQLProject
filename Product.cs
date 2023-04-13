@@ -11,16 +11,6 @@ namespace CustomerSQLProject
 
         public int ProductId { get; set; }
         public string ProductName { get; set; }
-    
-        public static void CreateProduct(int id)
-        {
-
-        }
-
-        public static void DeleteProduct(int id)
-        {
-
-        }
 
     }
 }

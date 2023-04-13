@@ -7,22 +7,31 @@ using System.Threading.Tasks;
 
 namespace CustomerSQLProject
 {
-    public static class CustomerExtensionMethods
+    public class CustomerExtensionMethods
     {
-        public static int GetLastId(string tableName)
+        public static int? GetLastId(string tableName,string idName)
         {
-            string getLastIdCommand = "SELECT TOP 1 * FROM Orders ORDER BY ID DESC;";
+            string getLastIdCommand = $"SELECT TOP 1 {idName} FROM {tableName} ORDER BY ID DESC;";
 
             using(SqlConnection conn = new(""))
             {
                 conn.Open();
 
-
+                using(SqlCommand cmd = new(getLastIdCommand,conn))
+                {
+                    using(SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            return reader.GetInt32(0);
+                        }
+                    }
+                }
 
                 conn.Close();
             }
 
-            return 0;
+            return null;
         }
 
     }
