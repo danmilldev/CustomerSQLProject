@@ -51,7 +51,7 @@ namespace CustomerSQLProject
                 Console.WriteLine("OrderNumber\tOrderName\t\tProductName");
 
                 foreach (Orders order in orderList)
-				{
+				{ 
                     Console.WriteLine(order.OrderNumber + "\t\t" + order.CustomerName + "\t\t\t" + order.ProductName);
                 }
 
