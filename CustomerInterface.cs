@@ -20,18 +20,6 @@ namespace CustomerSQLProject
 			connectionString = connectionStringText;
 		}
 
-		//static void MethodHandler(Action methodName)
-		//{
-		//    using(SqlConnection conn = new(connectionString))
-		//    {
-		//        conn.Open();
-
-		//        methodName?.Invoke();
-
-		//        conn.Close();
-		//    }
-		//}
-
 		public void PrintResults()
 		{
 			using(SqlConnection conn = new(connectionString))
