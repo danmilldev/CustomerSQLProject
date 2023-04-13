@@ -11,7 +11,7 @@ namespace CustomerSQLProject
 	{
 		List<Orders> orderList = new();
 
-		static string connectionString;
+		string connectionString;
 
 		public CustomerInterface()
 		{
@@ -64,7 +64,7 @@ namespace CustomerSQLProject
 	class Orders
 	{
         public int OrderNumber { get; set; }
-        public string CustomerName { get; set; }
-        public string ProductName { get; set; }
+        public string? CustomerName { get; set; }
+        public string? ProductName { get; set; }
     }
 }
