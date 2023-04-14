@@ -11,6 +11,7 @@ namespace CustomerSQLProject
     {
         public static int? GetLastId(string tableName,string idName)
         {
+            //SELECT MAX(Animal_Id) FROM Animal; would also have been possible to get the highest ID
             string getLastIdCommand = $"SELECT TOP 1 {idName} FROM {tableName} ORDER BY ID DESC;";
 
             using(SqlConnection conn = new(""))
